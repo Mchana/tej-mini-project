@@ -6,19 +6,24 @@ console.log(board)
 while (win = false){
 
 }
+    //let cell = document.getElementById("id")
 
-const on_click = () => {
-    let cell = document.getElementById("id")
 
+function on_click(event) {
+    let cell = event.target
+    let cellID = event.target.id
+    
     if (player === 1){
         cell.textContent = "X"
         player = 2
+        board[cellID] = 1
+
     } else if (player === 2){
         cell.textContent = "O"
         player = 1
+        board[cellID] = 2
     }
 };
-
 const sumBoard = (board) => {
     hasWon(board[0]+board[1]+board[2])
     hasWon(board[3]+board[4]+board[5])
