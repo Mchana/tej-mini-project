@@ -1,30 +1,28 @@
-let board = [1,2,3,4,5,6,7,8,9];
-let win = false;
+let board = [0,0,0,0,0,0,0,0,0];
 let player = 1
-console.log(board)
-
-while (win = false){
-
-}
-    //let cell = document.getElementById("id")
+//console.log(board)
 
 
 function on_click(event) {
     let cell = event.target
-    let cellID = event.target.id
-    
-    if (player === 1){
-        cell.textContent = "X"
-        player = 2
-        board[cellID] = 1
+    let cellID = Number(event.target.id)
 
-    } else if (player === 2){
+    if (board[cellID] !==0) return;
+
+    if (player === 1 && board[cellID] === 0){
+        cell.textContent = "X"
+        board[cellID] = 1
+        player = 2
+
+    } else if (player === 2 && board[cellID] === 0){
         cell.textContent = "O"
-        player = 1
         board[cellID] = 2
+        player = 1
     }
+    sumBoard(board)
+
 };
-const sumBoard = (board) => {
+function sumBoard (board) {
     hasWon(board[0]+board[1]+board[2])
     hasWon(board[3]+board[4]+board[5])
     hasWon(board[6]+board[7]+board[8])
@@ -35,19 +33,19 @@ const sumBoard = (board) => {
     hasWon(board[2]+board[4]+board[6])
 }
 
-const hasWon = (sum) => {
+function hasWon (sum) {
     if (sum === 3) {
-        return true
+        console.log ("player 1 has won")
     } else if (sum === 6) {
-        return true
+        console.log ("player 2 has won")
 
     }
 }
 
-const returnXOrO = (player) =>{
-    if (player === 1) {
-        return "X"
-    } else if (player === 2) {
-        return "O"
-    }
-}
+// const returnXOrO = (player) =>{
+//     if (player === 1) {
+//         return "X"
+//     } else if (player === 2) {
+//         return "O"
+//     }
+// }
