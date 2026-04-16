@@ -39,6 +39,7 @@ function checkBoard(board) {
             board[i][1] === board[i][2]){
             gameover = true
             console.log(`${board[i][0]} is the winner`)
+            return
         }
     }
 // column check
@@ -48,6 +49,7 @@ function checkBoard(board) {
             board[1][i] === board[2][i]){
             gameover = true
             console.log(`${board[0][i]} is the winner`)
+            return
         }
     }
 
@@ -55,27 +57,34 @@ function checkBoard(board) {
         if (board[0][0] !== "" &&
             board[0][0] === board[1][1] && 
             board[1][1] === board[2][2]) {
-        gameover = true
-        console.log(`${board[1][1]} is the winner`)
-
-    }
-    if (board[0][2] !== "" &&
-        board[0][2] === board[1][1] && 
-        board[1][1] === board[2][0]) {
-        gameover = true
-        console.log(`${board[1][1]} is the winner`)
+            gameover = true
+            console.log(`${board[1][1]} is the winner`)
+            return
+        }
+        if (board[0][2] !== "" &&
+            board[0][2] === board[1][1] && 
+            board[1][1] === board[2][0]) {
+            gameover = true
+            console.log(`${board[1][1]} is the winner`)
+            return
     }
 //full board check for draw
+
+        if (checkDraw(board) === true){
+            gameover = true
+            console.log("it's a draw")
+}
+
 }
 
 function checkDraw(board) {
-    let draw = false
-
     for (let i = 0; i < 3; i++){
         for (let j = 0; j < 3; j++){
             if (board[i][j] === ""){
-                draw = false
+                return false
             }
         }
     }
+
+    return true
 }
