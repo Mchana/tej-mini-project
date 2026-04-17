@@ -21,11 +21,13 @@ function on_click(event) {
         cell.textContent = "X"
         board[row][col] = "X"
         player = 2
+        document.getElementById("playerturn").textContent = `Player 2 turn (O)`
 
     } else if (player === 2){
         cell.textContent = "O"
         board[row][col] = "O"
         player = 1
+        document.getElementById("playerturn").textContent = `Player 1 turn (X)`
     }
     checkBoard(board)
 
@@ -39,6 +41,7 @@ function checkBoard(board) {
             board[i][1] === board[i][2]){
             gameover = true
             console.log(`${board[i][0]} is the winner`)
+            document.getElementById("message").textContent = `${board[i][0]} is the winner`
             return
         }
     }
@@ -49,6 +52,7 @@ function checkBoard(board) {
             board[1][i] === board[2][i]){
             gameover = true
             console.log(`${board[0][i]} is the winner`)
+            document.getElementById("message").textContent = `${board[i][0]} is the winner`
             return
         }
     }
@@ -59,6 +63,7 @@ function checkBoard(board) {
             board[1][1] === board[2][2]) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
+            document.getElementById("message").textContent = `${board[i][0]} is the winner`
             return
         }
         if (board[0][2] !== "" &&
@@ -66,6 +71,7 @@ function checkBoard(board) {
             board[1][1] === board[2][0]) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
+            document.getElementById("message").textContent = `${board[i][0]} is the winner`
             return
     }
 //full board check for draw
@@ -73,6 +79,7 @@ function checkBoard(board) {
         if (checkDraw(board) === true){
             gameover = true
             console.log("it's a draw")
+            document.getElementById("message").textContent = `it's a draw`
 }
 
 }
@@ -87,4 +94,20 @@ function checkDraw(board) {
     }
 
     return true
+}
+
+function restartGame() {
+    board =[
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+    ];
+
+    player = 1
+    gameover = false
+
+    document.getElementById(".cell").forEach(cell => {cell.textContent = ""})
+    document.getElementById("message").textContent = ""
+    document.getElementById("playerturn").textContent = "Player 1 turn (X)"
+
 }
