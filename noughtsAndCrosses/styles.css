@@ -1,10 +1,19 @@
 body {
-    background-color: blueviolet;
+    /* background: linear-gradient(in oklch longer hue 90deg, magenta, cyan); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     margin: 0;
+    animation: bg-shift 5s infinite alternate;
+}
+
+    @keyframes bg-shift {
+    from {
+      background-color: oklch(62.793% 0.25768 29.223); /* Warm pinkish */
+    }
+    to {
+      background-color: oklch(88.024% 0.20256 116.817); /* Cool bluish */
+    }
 }
 
 h1{
@@ -23,9 +32,51 @@ h1{
 }
 
 .cell {
+    background-color: white;
     border: 2px solid black;
     text-align: center;
     line-height: 100px;
     font-size: 5em;
     
+}
+
+.cell:hover{
+    background-color: oklch(45.259% 0.31286 264.337)    
+}
+
+.cell.X{
+    background-color: oklch(86.851% 0.27806 144.422)    
+
+}
+
+.cell.O{
+    background-color: oklch(68.978% 0.30982 333.013)    
+}
+
+#playerturn {
+    margin: 10px 0;
+    font-size: 1em;
+    border: 2px solid black;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+}
+
+button:hover {
+    background-color: #333;
 }

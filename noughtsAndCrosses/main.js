@@ -36,12 +36,14 @@ function on_click(event) {
 
     if (player === 1){
         cell.textContent = "X"
+        cell.classList.add("X");
         board[row][col] = "X"
         player = 2
         document.getElementById("playerturn").textContent = `Player 2 turn (O)`
 
     } else if (player === 2){
         cell.textContent = "O"
+        cell.classList.add("O");
         board[row][col] = "O"
         player = 1
         document.getElementById("playerturn").textContent = `Player 1 turn (X)`
