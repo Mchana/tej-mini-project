@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>Noughts and Crosses game</h1>
+    <div class="scoreboard">
+        <p> Player 1 (X): <span id="scoreX" </span>0</p>
+        <p> Player 2 (O): <span id="scoreO" </span>0</p>
+    </div>
     <p id="playerturn">Player 1's turn (X)</p>
     <div class="grid">
         <div class="cell" id="0" onclick="on_click(event)"></div>
@@ -23,6 +27,7 @@
 
 
     <button onclick="restartGame()">Restart Game</button>
+    <button onclick="resetScore()">Reset score</button>
 
     <p id="message"></p>
 

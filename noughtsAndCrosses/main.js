@@ -6,6 +6,8 @@ let board =[
 
 let player = 1
 let gameover = false
+let scoreX = 0
+let scoreO = 0
 
 function restartGame() {
     board =[
@@ -22,6 +24,12 @@ function restartGame() {
     document.getElementById("message").textContent = ""
     document.getElementById("playerturn").textContent = "Player 1 turn (X)"
 
+}
+
+function resetScore(){
+    scoreX = 0
+    scoreO = 0
+    updateScoreboard()
 }
 
 
@@ -62,6 +70,7 @@ function checkBoard(board) {
             gameover = true
             console.log(`${board[i][0]} is the winner`)
             document.getElementById("message").textContent = `${board[i][0]} is the winner`
+            addWinner(board[i][0])
             document.getElementById("playerturn").textContent = "Game over";
             return
         }
@@ -74,6 +83,7 @@ function checkBoard(board) {
             gameover = true
             console.log(`${board[0][i]} is the winner`)
             document.getElementById("message").textContent = `${board[0][i]} is the winner`
+            addWinner(board[0][i])
             document.getElementById("playerturn").textContent = "Game over";
             return
         }
@@ -86,6 +96,7 @@ function checkBoard(board) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
             document.getElementById("message").textContent = `${board[1][1]} is the winner`
+            addWinner(board[1][1])
             document.getElementById("playerturn").textContent = "Game over";
             return
         }
@@ -95,6 +106,7 @@ function checkBoard(board) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
             document.getElementById("message").textContent = `${board[1][1]} is the winner`
+            addWinner(board[1][1])
             document.getElementById("playerturn").textContent = "Game over";
             return
     }
@@ -121,3 +133,17 @@ function checkDraw(board) {
     return true
 }
 
+function addWinner(str){
+    if (str === "X"){
+        scoreX++
+        updateScoreboard()
+    } else if (str === "O"){
+        scoreO++
+        updateScoreboard()
+    }
+} 
+
+function updateScoreboard() {
+    document.getElementById("scoreX").textContent = scoreX;
+    document.getElementById("scoreO").textContent = scoreO;
+}
