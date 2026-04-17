@@ -55,7 +55,7 @@ h1{
 
 #playerturn {
     margin: 10px 0;
-    font-size: 1em;
+    font-size: 5em;
     border: 2px solid black;
     padding: 8px 16px;
     border-radius: 8px;
@@ -64,8 +64,13 @@ h1{
 }
 
 #message {
-    margin-top: 10px;
-    font-weight: bold;
+    margin: 10px 0;
+    font-size: 5em;
+    /* border: 2px solid black; */
+    padding: 8px 16px;
+    border-radius: 8px;
+    /* background-color: black; */
+    color: black;
 }
 
 button {

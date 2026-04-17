@@ -18,6 +18,7 @@ function restartGame() {
     gameover = false
 
     document.querySelectorAll(".cell").forEach(cell => {cell.textContent = ""})
+    document.querySelectorAll(".cell").forEach(cell => {cell.className = "cell"})
     document.getElementById("message").textContent = ""
     document.getElementById("playerturn").textContent = "Player 1 turn (X)"
 
