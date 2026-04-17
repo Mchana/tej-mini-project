@@ -59,6 +59,7 @@ function checkBoard(board) {
             gameover = true
             console.log(`${board[i][0]} is the winner`)
             document.getElementById("message").textContent = `${board[i][0]} is the winner`
+            document.getElementById("playerturn").textContent = "Game over";
             return
         }
     }
@@ -69,7 +70,8 @@ function checkBoard(board) {
             board[1][i] === board[2][i]){
             gameover = true
             console.log(`${board[0][i]} is the winner`)
-            document.getElementById("message").textContent = `${board[i][0]} is the winner`
+            document.getElementById("message").textContent = `${board[0][i]} is the winner`
+            document.getElementById("playerturn").textContent = "Game over";
             return
         }
     }
@@ -80,7 +82,8 @@ function checkBoard(board) {
             board[1][1] === board[2][2]) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
-            document.getElementById("message").textContent = `${board[i][0]} is the winner`
+            document.getElementById("message").textContent = `${board[1][1]} is the winner`
+            document.getElementById("playerturn").textContent = "Game over";
             return
         }
         if (board[0][2] !== "" &&
@@ -88,7 +91,8 @@ function checkBoard(board) {
             board[1][1] === board[2][0]) {
             gameover = true
             console.log(`${board[1][1]} is the winner`)
-            document.getElementById("message").textContent = `${board[i][0]} is the winner`
+            document.getElementById("message").textContent = `${board[1][1]} is the winner`
+            document.getElementById("playerturn").textContent = "Game over";
             return
     }
 //full board check for draw
@@ -97,6 +101,7 @@ function checkBoard(board) {
             gameover = true
             console.log("it's a draw")
             document.getElementById("message").textContent = `It's a draw`
+            document.getElementById("playerturn").textContent = "Game over";
 }
 
 }
