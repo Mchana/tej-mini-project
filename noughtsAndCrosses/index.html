@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Noughts and Crosses game</h1>
+    <p id="playerturn">Player 1's turn (X)</p>
     <div class="grid">
         <div class="cell" id="0" onclick="on_click(event)">2</div><!--""TM"-->
         <div class="cell" id="1" onclick="on_click(event)">3</div><!--"TR"-->
@@ -19,6 +20,11 @@
         <div class="cell" id="7" onclick="on_click(event)">8</div><!--"BM"-->
         <div class="cell" id="8" onclick="on_click(event)">9</div><!--"BR"-->
     </div>
+
+    <p id="message"></p>
+
+    <button onclick="restartGame">Restart Game</button>
+
 <script src="./main.js"></script>    
 </body>
 </html>
