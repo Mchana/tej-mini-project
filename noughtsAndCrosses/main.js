@@ -7,6 +7,23 @@ let board =[
 let player = 1
 let gameover = false
 
+function restartGame() {
+    board =[
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+    ];
+
+    player = 1
+    gameover = false
+
+    document.querySelectorAll(".cell").forEach(cell => {cell.textContent = ""})
+    document.getElementById("message").textContent = ""
+    document.getElementById("playerturn").textContent = "Player 1 turn (X)"
+
+}
+
+
 function on_click(event) {
     if (gameover === true) return;
     //console.log(board)
@@ -79,7 +96,7 @@ function checkBoard(board) {
         if (checkDraw(board) === true){
             gameover = true
             console.log("it's a draw")
-            document.getElementById("message").textContent = `it's a draw`
+            document.getElementById("message").textContent = `It's a draw`
 }
 
 }
@@ -96,18 +113,3 @@ function checkDraw(board) {
     return true
 }
 
-function restartGame() {
-    board =[
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""]
-    ];
-
-    player = 1
-    gameover = false
-
-    document.getElementById(".cell").forEach(cell => {cell.textContent = ""})
-    document.getElementById("message").textContent = ""
-    document.getElementById("playerturn").textContent = "Player 1 turn (X)"
-
-}
