@@ -9,10 +9,10 @@ body {
 
     @keyframes bg-shift {
     from {
-      background-color: oklch(62.793% 0.25768 29.223); /* Warm pinkish */
+        background-color: oklch(62.793% 0.25768 29.223); 
     }
     to {
-      background-color: oklch(88.024% 0.20256 116.817); /* Cool bluish */
+        background-color: oklch(88.024% 0.20256 116.817); 
     }
 }
 
@@ -56,10 +56,10 @@ h1{
 #playerturn {
     margin: 10px 0;
     font-size: 5em;
-    border: 2px solid black;
+    border: 2px solid rgba(131, 81, 81, 0);
     padding: 8px 16px;
     border-radius: 8px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.582);
     color: white;
 }
 
