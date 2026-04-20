@@ -43,12 +43,10 @@ h1{
     color: white;
 }
 .grid {
-    width: 450px;
-    /* background-color: #f3c008; */
     color: black;
     border: 2px solid black;
     display: grid;
-    grid-template-columns: 150px 150px 150px;
+    grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     margin: auto;
 
@@ -58,7 +56,6 @@ h1{
     background-color: oklch(60.542% 0.24845 29.223 /50%);
     border: 2px solid black;
     text-align: center;
-    line-height: 100px;
     font-size: 5em;
     
 }
@@ -88,7 +85,7 @@ h1{
 
 #message {
     margin: 10px 0;
-    font-size: 1em;
+    font-size: 2em;
     /* border: 2px solid black; */
     padding: 8px 16px;
     border-radius: 8px;
