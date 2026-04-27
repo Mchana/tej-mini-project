@@ -9,6 +9,8 @@ let gameover = false
 let scoreX = 0
 let scoreO = 0
 
+// change for branch kata
+
 function restartGame() {
     board =[
     ["", "", ""],
